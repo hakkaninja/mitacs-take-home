@@ -5,12 +5,13 @@
 - Be on at least Node 18
 
 2. Download and Install Redis-stack-server: https://redis.io/docs/getting-started/install-stack/
-   (If you're on windows, you will have to install Docker.)
+   (If you're on windows, you will have to install Docker)
 
 - The server won't work without this dependency.
+- Make sure you have the redis server running (on mac the command to use is redis-stack-server)
 
-3. To run the backend test server, navigate to the server folder and `npm start`
-4. To run the frontend react app, navigate to the webclient folder and `npm start`
+3. To run the backend test server, navigate to the server folder `npm install` and then `npm start`
+4. To run the frontend react app, navigate to the webclient folder `npm install` and `npm start` and run the frontend on a different port
 5. To run tests on the frontend react app, navigate to the webclient folder and `npm test`
 
 # Further Improvements
