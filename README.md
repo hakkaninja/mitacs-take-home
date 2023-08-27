@@ -18,6 +18,6 @@
 
 There are some other code bits I would've liked to include if there was more time.
 
-1. error boundaries for the react code
+1. add error boundaries for the react code something like https://www.npmjs.com/package/react-error-boundary and test for it.
 2. diving deeper into testing react-query hooks with react-testing-library
 3. try to combine the AddInstitutionModal and the UpdateInstitutionModal into one component so its more reuseable.

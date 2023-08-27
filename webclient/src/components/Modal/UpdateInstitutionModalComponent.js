@@ -18,10 +18,8 @@ const UpdateInstitutionModalComponent = ({
 
   const updateInstitution = useUpdateInstitutions();
 
-  console.log("iddddd", data.id);
   const id = data.id;
   const handleUpdate = async (institution) => {
-    console.log("institution modal", institution);
     await updateInstitution.mutateAsync(institution);
     handleCloseModal(false);
   };

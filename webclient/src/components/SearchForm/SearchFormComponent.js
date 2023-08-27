@@ -23,6 +23,7 @@ const SearchFormComponent = () => {
         <input
           role="searchbox"
           className="search__input"
+          data-testid="search"
           type="text"
           onChange={handleSearchChange}
         />

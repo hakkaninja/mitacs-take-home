@@ -15,7 +15,6 @@ function useUpdateInstitutions() {
           institution
         );
       } catch (err) {
-        console.log(err);
         toast(
           "Something went wrong, could not update institution!, Please try again later"
         );

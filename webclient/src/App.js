@@ -45,14 +45,18 @@ function App() {
     citiesQuery.isLoading ||
     provincesTerritoriesQuery.isLoading
   ) {
-    return <div>Loading Data...</div>;
+    return <div data-testid="app-loading">Loading Data...</div>;
   }
   if (
     institutionsQuery.isError ||
     citiesQuery.isError ||
     provincesTerritoriesQuery.isError
   ) {
-    return <div>Data Loading failed, please try again later</div>;
+    return (
+      <div data-testid="app-error">
+        Data Loading failed, please try again later
+      </div>
+    );
   }
 
   let list = filterData(
@@ -73,8 +77,11 @@ function App() {
       }}
     >
       <div data-testid="app" className="App">
+        <h1>Institution Directory</h1>
         <ToastContainer />
-        <button onClick={handleOpenModal}>Add New Institution</button>
+        <button data-testid="add-institution" onClick={handleOpenModal}>
+          Add New Institution
+        </button>
         {showModal && (
           <Modal
             showModal={showModal}
