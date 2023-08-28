@@ -9,6 +9,7 @@
 
 - The server won't work without this dependency.
 - Make sure you have the redis server running (on mac the command to use is redis-stack-server)
+- You also need to ensure your internet connection is working as I make use of axios calls.
 
 3. To run the backend test server, navigate to the server folder `npm install` and then `npm start`. Each time you restart the server, `data.txt` will populate redis. This data is our starting data.
 
