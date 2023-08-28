@@ -1,4 +1,3 @@
-"use client";
 import React, { useState } from "react";
 import { ToastContainer } from "react-toastify";
 import Modal from "./components/Modal/AddInstitutionModalComponent.js";
@@ -10,7 +9,7 @@ import { AppContext } from "./context/appContext.js";
 import SearchFormComponent from "./components/SearchForm/SearchFormComponent.js";
 import Dropdown from "./components/Dropdown/DropdownComponent.js";
 import { DropdownTypes } from "./constants.js";
-import filterData from "../src/helper.js";
+import filterData from "./helpers/filterData.js";
 import "./App.css";
 
 function App() {

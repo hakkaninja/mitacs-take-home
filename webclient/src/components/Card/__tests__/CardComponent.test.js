@@ -3,7 +3,7 @@ import { render, screen, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import userEvent from "@testing-library/user-event";
 import CardComponent from "../CardComponent.js";
-import wrapper from "../../../wrapper.js";
+import wrapper from "../../../helpers/tests/wrapper.js";
 
 const setup = (data = {}) => {
   const mockProps = {
