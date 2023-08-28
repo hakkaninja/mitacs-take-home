@@ -14,6 +14,11 @@
 4. To run the frontend react app, navigate to the webclient folder `npm install` and `npm start` and run the frontend on a different port.
 5. To run tests on the frontend react app, navigate to the webclient folder and `npm test`
 
+# Implementation
+
+1. For the keyword search, I used a library called fuse.js that can take in a threshold and other parameters that allow you to tweak how precise you want the keyword search results to be. The lower this the threshold, the more precise the results. I decided to use a threshold that returned somewhat similar results as sometimes users can misspell their keywords.
+2. I decided to return all institution data when the app first starts up for the user. This way I can avoid pagination and just focus on the CRUD operations. All subsequent filters are client side filters not server side.
+
 # Further Improvements
 
 There are some other code bits I would've liked to include if there was more time.
@@ -23,3 +28,4 @@ There are some other code bits I would've liked to include if there was more tim
 3. try to combine the AddInstitutionModal and the UpdateInstitutionModal into one component so its more reuseable.
 4. write backend tests, I focused on writing a few frontend tests to test the UI because that's what the assignment focused on.
 5. more optimizing code
+6. add pagination and server side search
