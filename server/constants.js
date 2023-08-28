@@ -9,6 +9,21 @@ const constants = {
   REMOVE_INSTITUTION_ROUTE: "/institution/:id",
   UPDATE_INSTITUTION_ROUTE: "/institution/:id",
   GET_INSTITUTIONS_ROUTE: "/institution/search",
+  PROVINCES_TERRITORIES: [
+    "Alberta",
+    "British Columbia",
+    "Manitoba",
+    "New Brunswick",
+    "Newfoundland and Labrador",
+    "Nova Scotia",
+    "Ontario",
+    "Prince Edward Island",
+    "Quebec",
+    "Saskatchewan",
+    "Northwest Territories",
+    "Nunavut",
+    "Yukon",
+  ],
 };
 
 export default constants;

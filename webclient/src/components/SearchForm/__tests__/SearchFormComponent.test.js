@@ -1,7 +1,10 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import SearchFormComponent from "../../components/SearchForm/SearchFormComponent";
+import "@testing-library/jest-dom";
+
+import SearchFormComponent from "../SearchFormComponent";
+
 const setup = () => {
   const utils = render(<SearchFormComponent />);
   const input = screen.getByRole("searchbox");

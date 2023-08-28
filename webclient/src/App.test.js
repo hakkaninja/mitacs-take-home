@@ -1,31 +1,20 @@
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { waitFor, render, screen } from "@testing-library/react";
-import useInstitutions from "../../customHooks/useInstitutions.js";
-import useCities from "../../customHooks/useCities.js";
-import useProvincesTerritories from "../../customHooks/useProvincesTerritories.js";
-import App from "../../App.js";
+import "@testing-library/jest-dom";
 
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      retry: false,
-    },
-  },
-});
-const wrapper = ({ children }) => {
-  return (
-    <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
-  );
-};
+import useInstitutions from "./customHooks/useInstitutions.js";
+import useCities from "./customHooks/useCities.js";
+import useProvincesTerritories from "./customHooks/useProvincesTerritories.js";
+import App from "./App.js";
+import wrapper from "./wrapper.js";
 
 const mockedUseInstitutions = useInstitutions;
-jest.mock("../../customHooks/useInstitutions.js");
+jest.mock("./customHooks/useInstitutions.js");
 
 const mockedUseCities = useCities;
-jest.mock("../../customHooks/useCities.js");
+jest.mock("./customHooks/useCities.js");
 
 const mockedUseProvincesTerritories = useProvincesTerritories;
-jest.mock("../../customHooks/useProvincesTerritories.js");
+jest.mock("./customHooks/useProvincesTerritories.js");
 
 afterEach(() => {
   jest.resetAllMocks();
@@ -85,13 +74,10 @@ describe("App Component", () => {
       expect(screen.getByTestId("app")).toBeInTheDocument();
     });
     expect(screen.getByRole("heading")).toBeVisible();
-    expect(screen.getByTestId("add-institution")).toBeInTheDocument();
-    expect(screen.getByTestId("search")).toBeInTheDocument();
-    expect(screen.getByTestId("City-dropdown")).toBeInTheDocument();
-    expect(
-      screen.getByTestId("Province/Territory-dropdown")
-    ).toBeInTheDocument();
-
-    expect(screen.getByTestId("institution-list")).toBeInTheDocument();
+    expect(screen.getByTestId("add-institution")).toBeVisible();
+    expect(screen.getByTestId("search")).toBeVisible();
+    expect(screen.getByTestId("City-dropdown")).toBeVisible();
+    expect(screen.getByTestId("Province/Territory-dropdown")).toBeVisible();
+    expect(screen.getByTestId("institution-list")).toBeVisible();
   });
 });

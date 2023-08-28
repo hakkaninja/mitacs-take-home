@@ -1,13 +1,10 @@
 import React from "react";
-import { useContext, useState } from "react";
-import { AppContext } from "../../context/appContext.js";
+import { useState } from "react";
 import useDeleteInstitutions from "../../customHooks/useDeleteInstitution.js";
 import UpdateInstitutionModalComponent from "../Modal/UpdateInstitutionModalComponent.js";
 
 const CardComponent = (props) => {
   const [showModal, setShowModal] = useState(false);
-  const { provincesTerritories } = useContext(AppContext);
-  const [provincesTerritoriesData] = provincesTerritories;
 
   const handleOpenModal = () => {
     setShowModal(true);
@@ -24,22 +21,24 @@ const CardComponent = (props) => {
   };
 
   return (
-    <div className="card">
+    <div data-testid="card" className="card">
       <p>name: {props.data.value.name}</p>
       <p>city: {props.data.value.city}</p>
       <p>province/territory: {props.data.value.province_territory}</p>
       <button
         id={props.data.value.id}
+        data-testid="removeButton"
         onClick={() => handleDelete(props.data.value.id)}
       >
         Remove
       </button>
-      <button onClick={handleOpenModal}>Update</button>
+      <button data-testid="updateButton" onClick={handleOpenModal}>
+        Update
+      </button>
       {showModal && (
         <UpdateInstitutionModalComponent
           showModal={showModal}
           handleCloseModal={handleCloseModal}
-          provincesTerritories={provincesTerritoriesData}
           data={props.data.value}
         />
       )}

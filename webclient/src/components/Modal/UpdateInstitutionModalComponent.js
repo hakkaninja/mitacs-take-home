@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import ReactModal from "react-modal";
 import DropdownComponent from "../Dropdown/DropdownComponent.js";
 import { useForm } from "react-hook-form";
 import useUpdateInstitutions from "../../customHooks/useUpdateInstitution.js";
+import { AppContext } from "../../context/appContext.js";
 
 const UpdateInstitutionModalComponent = ({
   showModal,
   handleCloseModal,
-  provincesTerritories,
+
   data,
 }) => {
   const {
@@ -15,6 +16,9 @@ const UpdateInstitutionModalComponent = ({
     handleSubmit,
     formState: { errors },
   } = useForm();
+
+  const { provincesTerritories } = useContext(AppContext);
+  const [provincesTerritoriesData] = provincesTerritories || [];
 
   const updateInstitution = useUpdateInstitutions();
 
@@ -45,6 +49,7 @@ const UpdateInstitutionModalComponent = ({
         Close Modal
       </button>
       <form
+        data-testid="update-institution-form"
         onSubmit={handleSubmit((data) => {
           if (dropdownValue === "") {
             alert("You must select a province or territory");
@@ -73,7 +78,7 @@ const UpdateInstitutionModalComponent = ({
         </label>
         {errors.city && <p>City is required.</p>}
         <DropdownComponent
-          data={provincesTerritories}
+          data={provincesTerritoriesData}
           type="Province/Territory"
           onChange={onDropdownChange}
           value={data.province_territory}

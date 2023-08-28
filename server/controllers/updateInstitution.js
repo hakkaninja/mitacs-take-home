@@ -21,9 +21,9 @@ export const updateInstitution = async (query) => {
     ...query,
   });
   /**
-   * in redis there is no update a hash opreation but instead
+   * in redis there is no update a hash operation but instead
    * we're just going to replace the old hash with the updated hash
-   * and because the number of fields are the same the result will be 0 anyway and will never be less than 0
+   * and because the number of fields are the same the result will be 0 and will never be less than 0
    * usually a DBMS would tell us whether an update or insert or delete was successful
    * and we can base off of that and decide whether to throw an error or not.
    */

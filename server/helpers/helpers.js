@@ -16,21 +16,10 @@ export const updateCities = async (redisClient) => {
 };
 
 export const createProvinceTerritoryData = async (redisClient) => {
-  await redisClient.sAdd(`${constants.PROVINCES_TERRITORIES_KEY}`, [
-    "Alberta",
-    "British Columbia",
-    "Manitoba",
-    "New Brunswick",
-    "Newfoundland and Labrador",
-    "Nova Scotia",
-    "Ontario",
-    "Prince Edward Island",
-    "Quebec",
-    "Saskatchewan",
-    "Northwest Territories",
-    "Nunavut",
-    "Yukon",
-  ]);
+  await redisClient.sAdd(
+    `${constants.PROVINCES_TERRITORIES_KEY}`,
+    constants.PROVINCES_TERRITORIES
+  );
 };
 
 export const createIndex = async (redisClient) => {
