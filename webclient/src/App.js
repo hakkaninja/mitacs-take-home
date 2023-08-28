@@ -71,7 +71,6 @@ function App() {
         selectedCity: [city, setCity],
         selectedProvinceTerritory: [provinceTerritory, setProvinceTerritory],
         keyword: [keyword, setKeyword],
-        cities: [citiesQuery.data],
         provincesTerritories: [provincesTerritoriesQuery.data],
       }}
     >
