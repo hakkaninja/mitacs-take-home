@@ -5,7 +5,7 @@
 - Be on at least Node 18
 
 2. Download and Install Redis-stack-server: https://redis.io/docs/getting-started/install-stack/
-   (If you're on windows, you will have to install Docker and use the `redis-stack-server` image)
+   (If you're on windows, you will have to install Docker and use the `redis/redis-stack` image)
 
 - The server won't work without this dependency.
 - Make sure you have the redis server running (on mac the command to use is `redis-stack-server`)
